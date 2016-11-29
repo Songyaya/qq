@@ -1,4 +1,9 @@
-angular.module('xiangmuApp').controller("c",["$scope","$http","$state","$rootScope","PolarAreaCtrl",function ($scope,$http,$state,$rootScope,PolarAreaCtrl) {
-    $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"];
-    $scope.data = [300, 500, 100, 40, 120];
+angular.module('xiangmuApp').controller("BarCtrl",["$scope","$http",function ($scope,$http) {
+  $scope.labels = ['lnn', 'wyc', 'jgr'];
+  $scope.series = ['lnn', 'wyc','jgr'];
+  $scope.data = [
+    [65, 59, 80],
+    [28, 48, 40],
+    [30, 60, 80]
+  ];
 }])

@@ -8,7 +8,7 @@
  * Main module of the application.
  */
 angular
-  .module('xiangmuApp', ["ui.router","ngCookies","chart.js"]).config(["$stateProvider","$urlRouterProvider",function ($stateProvider,$urlRouterProvider){
+  .module('xiangmuApp', ["ui.router","ngCookies","chart.js","ngSanitize","summernote"]).config(["$stateProvider","$urlRouterProvider",function ($stateProvider,$urlRouterProvider){
     $stateProvider.state("daohang",{
       url:"/daohang",
       templateUrl: "views/daohang.html",
@@ -28,7 +28,7 @@ angular
     }).state("c",{
       url:"/c",
       templateUrl: "views/c.html",
-      controller: "c"
+      controller: "BarCtrl"
     })
 
     $urlRouterProvider.when('','/dengl')

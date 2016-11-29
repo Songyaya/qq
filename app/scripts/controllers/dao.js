@@ -6,10 +6,7 @@ angular.module('xiangmuApp') .controller("daohang",["$scope","$http","$rootScope
     params:{to:$scope.user}
   }).success(function(e){
     $scope.data = e
-   
-    
   })
-
   $scope.editSave=function(){
     $http({
       url:"http://www.bugcenter.com.cn:1511/item/"+$scope.editData.id,
@@ -22,7 +19,7 @@ angular.module('xiangmuApp') .controller("daohang",["$scope","$http","$rootScope
     $scope.editData=e
   }
 
-  
+  $scope.w=""
   
   
   
@@ -38,11 +35,11 @@ $http({
 });
 
 $scope.next=function(){
-    num+=3;
+    num+=6;
     $http({
       url:'http://www.bugcenter.com.cn:1511/item',
       method:"GET",
-      params:{"$skip":num,"$limit":3}
+      params:{"$skip":num,"$limit":6}
     }).success(function(e){
       $scope.data=e
      
@@ -50,11 +47,11 @@ $scope.next=function(){
     })
 }
 $scope.shang=function(){
-    num-=3;
+    num-=6;
     $http({
       url:'http://www.bugcenter.com.cn:1511/item',
       method:"GET",
-      params:{"$skip":num,"$limit":3}
+      params:{"$skip":num,"$limit":6}
     }).success(function(e){
       $scope.data=e
     

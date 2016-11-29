@@ -17,12 +17,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a ui-sref="ziji">首页</a></li>
+          <li class="active"><a href="#">首页</a></li>
         <li class="active"><a href="#">增加</a></li>
-        <li class="active"><a href="#">报表</a></li>
-        <li class="active"><a ng-click="tuichu()">退出</a></li>
-        <li class="active"><a href="#">测试:张三</a></li>
-      </ul>
+        <li class="active"><a ui-sref="c">图表</a></li>
+       <li class="active"><a ui-sref="dengl">退出</a></li>
+        <li class="active"><a ui-sref="daohang">测试:张三</a></li>
+        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -46,7 +46,7 @@
   </div>
 </div>
 <div class="container ng-scope"  style="margin-top:30px">
-  <div class="panel panel-default"  ng-repeat="i in data">
+  <div class="panel panel-default"  ng-repeat="i in data|filter:w">
     <div class="panel-heading" >
       <h3 class="panel-title">标题{{$index+1}}</h3>
       <img src="images/xiugai.png" ng-click="del(i)" style="float:right;margin-right:10px;margin-top:-23px;"/>
@@ -56,10 +56,10 @@
       <div style="border-bottom:1px solid #eee;color:#777;margin-bottom:5px"> 标题:{{i.summary}}
         <button type="submit" class="btn btn-primary" style="background:#b90404;border:0px;width:60px;height:26px;line-height:12px;text-indent:-3px;outline:none;text-align:center;float:right; margin-right:3px;margin-top:-10px;" ng-click="zhong(i)">{{i.importance|imp}}</button>
       </div>
-      <textarea cols="60" style="border:none;">描述:{{i.description}}</textarea>
+      <div cols="30" style="border:none;" ng-bind-html='i.description'></div>
       <div style="border-bottom:1px solid #eee;color:#777;margin-bottom:5px"> 发生频率:{{i.frequency|imp1}} </div>
       <div style="border-bottom:1px solid #eee;color:#777;margin-bottom:5px"> 日期:{{i.date}} </div>
-      <div style="border-bottom:1px solid #eee;color:#777;margin-bottom:5px"> 发表人:{{i.from}} </div>
+      <div style="border-bottom:1px solid #eee;color:#777;margin-bottom:5px"> 发表人:csd</div>
     </div>
   </div>
 </div>

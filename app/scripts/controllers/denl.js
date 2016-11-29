@@ -8,14 +8,16 @@
                 data:$scope.updata
             }).success(function(e){
               $scope.uid= e.uid
-              $rootScope.user={}
-              $rootScope.user.username=$scope.updata.username
+//            $rootScope.user={}
+//            $rootScope.user.username=$scope.updata.username
               //$rootScope.user.uid= e.uid
               $http({
                 url: "http://www.bugcenter.com.cn:1511/users/"+$scope.uid,
                 method:"get"
               }).success(function(e){
                console.log(e)
+              $rootScope.user={}
+              $rootScope.user.username=$scope.updata.username
                 if(e.charactor==0){//wyc
                   //$scope.isshow=false
                   $state.go("daohang")

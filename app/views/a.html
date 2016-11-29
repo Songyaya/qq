@@ -14,12 +14,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">所有</a></li>
-          <li class="active"><a ui-sref="daohang">私人</a></li>
-          <li class="active"><a ui-sref="dengl">登录</a></li>
-          <li class="active"><a href="#">查找</a></li>
-          <li class="active"><a href="#">修改密码</a></li>
-          <li class="active"><a ng-click="tuichu()">退出</a></li>
+          <li class="active"><a href="#">首页</a></li>
+        <li class="active"><a href="#">增加</a></li>
+        <li class="active"><a ui-sref="c">图表</a></li>
+       <li class="active"><a ui-sref="dengl">退出</a></li>
+        <li class="active"><a ui-sref="daohang">测试:张三</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -30,16 +29,62 @@
     <!--<td>{{x.content}}</td>-->
   <!--</tr>-->
 <!--</table>-->
-  <form role="form" class="ng-pristine ng-valid" style="margin-top:-230px;margin-left:-139px;">
+  <form role="form" class="ng-pristine ng-valid">
     <div class="form-group">
-      <input type="text" class="form-control input-lg"  id="feedbackinput" placeholder="title" ng-model="updata.summary">
+      <input type="text" class="form-control input-lg"  id="feedbackinput" placeholder="title" ng-model="updata2.summary">
     </div>
+    
     <div class="form-group">
-      <textarea class="form-control input-lg" id="feedbackcontent" name="feedbackcontent" rows="5"  placeholder="content" ng-model="updata.description"></textarea>
+    	
+    	<select class="form-control">
+         <option ng-model="updata2.classify " value="0">ui</option>
+         <option ng-model="updata2.classify " value="1">前端</option>
+         <option ng-model="updata2.classify " value="2">后台</option>
+
+      </select>
+      <div class="radio">
+  <label>
+    <input ng-model="updata2.importance" type="radio" name="optionsRadios" id="optionsRadios1" value="0" checked>
+    重要
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input ng-model="updata2.importance" type="radio" name="optionsRadios" id="optionsRadios2" value="1">
+    中等
+  </label>
+</div>
+<div class="radio disabled">
+  <label>
+    <input ng-model="updata2.importance" type="radio" name="optionsRadios" id="optionsRadios3" value="2">
+    一般
+  </label>
+</div>
     </div>
+    
+    
+    <div class="radio">
+  <label>
+    <input ng-model="updata2.frequency " type="radio" name="optionsRadios1" id="optionsRadios2" value="0">
+    经常
+  </label>
+</div>
+
+<div class="radio">
+  <label> 
+    <input ng-model="updata2.frequency " type="radio" name="optionsRadios1" id="optionsRadios2" value="1">
+    偶尔
+  </label>
+</div>
+
+
+    <div class="form-group">
+    	<summernote ng-model="updata2.description"></summernote>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="add()" style="float:right;">save</button>
   </form>
   <!--<input ng-model="updata.title" type="text" />-->
 <!--<input ng-model="updata.content" type="text" />-->
-  <button type="submit" class="btn btn-primary" ng-click="add()" style="float:right; margin-right:170px;margin-top:340px;">save</button>
+  
 </div>
 
